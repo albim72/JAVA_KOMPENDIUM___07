@@ -9,5 +9,17 @@ public class Main {
         Osoba os3 = new Osoba();
         os3.printOsoba();
 
+        System.out.println("___________________________________________");
+
+        Student st1 = new Student("Leon","Nowak","Opole",23,173.0,80.0,
+                "A 345345","Informatyka","czwarty");
+        st1.printOsoba();
+
+        Student st2 = new Student("Nadia","Nowik",22,160.6,53.3,
+                "rwe2345435","Ekomomia","trzeci");
+        st2.printOsoba();
+        
+        //Student st3 = new Student();
+
     }
 }
