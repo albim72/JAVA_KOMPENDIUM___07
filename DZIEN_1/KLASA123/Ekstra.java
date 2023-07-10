@@ -13,4 +13,8 @@ public class Ekstra implements InterS {
     public double wynik(int a, int b) {
         return a*b-2;
     }
+
+    public double ob(double b, double n){
+        return (b+n)/2*n;
+    }
 }
