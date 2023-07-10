@@ -11,12 +11,15 @@ public class Main {
         System.out.println(kd.printABC());
         System.out.println(kd.suma());
 
-        System.out.println("_________ KlasaDruga _________");
+        System.out.println("_________ KlasaTrzecia _________");
         KlasaTrzecia kt = new KlasaTrzecia(2,9,8,3);
         System.out.println(kt.printAB());
         System.out.println(kt.printABC());
         System.out.println(kt.printABCD());
         System.out.println(kt.suma());
+        kt.Opis();
+        System.out.println(kt.policz());
+        System.out.println(kt.wynik(7,8));
 
 
         System.out.println("_________ KlasaEkstra _________");
@@ -32,5 +35,11 @@ public class Main {
         System.out.println(ss.policz());
         System.out.println(ss.wynik(8,3));
         //System.out.println(ss.ob(4.5,1.2));
+
+        System.out.println("__________________________________");
+        InterS tks = new KlasaTrzecia(3,8,9,4);
+        tks.Opis();
+        System.out.println(tks.policz());
+        System.out.println(tks.wynik(7,8));
     }
 }
