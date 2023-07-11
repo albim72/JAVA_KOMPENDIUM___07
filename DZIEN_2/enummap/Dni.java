@@ -1,0 +1,5 @@
+package marcin.com;
+
+public enum Dni {
+    PONIEDZIALEK,WTOREK,SRODA,CZWARTEK,PIATEK,SOBOTA,NIEDZIELA
+}
