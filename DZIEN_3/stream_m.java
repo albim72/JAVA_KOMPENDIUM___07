@@ -12,5 +12,14 @@ public class Main {
         System.out.println(number);
         System.out.println(square);
 
+        List<String> names = Arrays.asList("Strumień","Serializacja","Kolekcja","Refleksja");
+        List<String> wynik = (List)names.stream().filter((s) -> {
+            return s.startsWith("S");
+        }).collect(Collectors.toList());
+
+        System.out.println(names);
+        wynik.forEach(System.out::println);
+
+
     }
 }
