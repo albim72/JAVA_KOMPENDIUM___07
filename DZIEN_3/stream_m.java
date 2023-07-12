@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -20,6 +21,31 @@ public class Main {
         System.out.println(names);
         wynik.forEach(System.out::println);
 
+        List<String> show = (List)names.stream().sorted().collect(Collectors.toList());
+        System.out.println(show);
+
+
+        List<String> sortshow = (List)names.stream().sorted().filter((s)->{
+            return s.startsWith("S");
+        }).collect(Collectors.toList());
+        System.out.println(sortshow);
+
+        Set<Integer> cubeset = (Set)number.stream().map((x)->{
+            return x*x*x;
+        }).collect(Collectors.toSet());
+
+        System.out.println(cubeset);
+
+        number.stream().filter((x)->{
+            return x%2==0;
+        }).forEach((y)-> System.out.println(y));
+
+        int ev = (Integer)number.stream().filter((x)->{
+            return x%2==0;
+        }).reduce(0,(ans,i)->{
+            return ans+i;
+        });
+        System.out.println(ev);
 
     }
 }
