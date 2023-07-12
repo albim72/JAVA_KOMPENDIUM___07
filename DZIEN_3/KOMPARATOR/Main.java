@@ -24,6 +24,17 @@ public class Main {
             System.out.println(ar.get(i));
         }
 
+        System.out.println(ar);
+
+        System.out.println("__________________________________________");
+
+        ar.sort(new SortByRoll());
+        System.out.println("Sortowanie po nr albumu:");
+        for(int i=0;i<ar.size();i++){
+            System.out.println(ar.get(i));
+        }
+        System.out.println(ar);
+
         System.out.println("__________________________________________");
 
         Collections.sort(ar,new SortByName());
@@ -31,5 +42,9 @@ public class Main {
         for(int i=0;i<ar.size();i++){
             System.out.println(ar.get(i));
         }
+
+        Student ab = new Student(456,"Janusz","Rzeszów");
+        System.out.println(ab.toString());
+
     }
 }
