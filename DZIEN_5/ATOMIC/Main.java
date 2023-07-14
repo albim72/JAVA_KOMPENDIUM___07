@@ -1,21 +1,30 @@
-import java.util.concurrent.atomic.AtomicInteger;
+import javax.swing.*;
 
-public class MyAtomicThread extends Thread {
-    private AtomicInteger acount = new AtomicInteger();
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        MyThread t = new MyThread();
+        Thread t1 = new Thread(t,"t1");
 
-    @Override
-    public void run() {
-        for (int i = 1; i <= 5; i++) {
-            try {
-                Thread.sleep(i * 100);
-                acount.incrementAndGet();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
+        t1.start();
+        Thread t2 = new Thread(t,"t2");
+        t2.start();
 
-    public AtomicInteger getCount() {
-        return acount;
+        t1.join();
+        t2.join();
+        System.out.println("count = " + t.getCount());
+
+        System.out.println("____________________ ATOMIC ___________________________");
+
+        MyAtomicThread k = new MyAtomicThread();
+        Thread k1 = new Thread(k,"k1");
+
+        k1.start();
+        Thread k2 = new Thread(k,"k2");
+        k2.start();
+
+        k1.join();
+        k2.join();
+        System.out.println("count = " + k.getCount());
+
     }
 }
